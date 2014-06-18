@@ -161,7 +161,7 @@
                 </configuration>
             </plugin>
             <!-- clean-up previous hibernate-search indexed from integration tests, as there could be a lock -->
-            <plugin>
+            <!--<plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>2.5</version>
                 <configuration>
@@ -177,7 +177,7 @@
         				</fileset>
                     </filesets>
                 </configuration>
-            </plugin>
+            </plugin>-->
             <!-- will package a ready-to-run app regarding hibernate-search index location -->
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
@@ -194,7 +194,7 @@
                             </includes>
                         </resource>
                     </webResources>
-                     <outputDirectory>C:\Program Files\Apache Software Foundation\Tomcat 7.0\webapps\</outputDirectory>
+                     <outputDirectory>\</outputDirectory>
                     <archive>
                         <manifest>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
@@ -696,7 +696,7 @@
         <web.framework>spring</web.framework>
         <amp.genericCore>true</amp.genericCore>
         <amp.fullSource>false</amp.fullSource>
-        <db.name>myproject</db.name>
+        <db.name>cfcdb1</db.name>
 
         <!-- Framework dependency versions -->
         <appfuse.version>3.0.0</appfuse.version>
@@ -740,6 +740,9 @@
         -->
 
         <!-- Database settings -->
+           <jdbc.url>jdbc:mysql://ec2-23-21-211-172.compute-1.amazonaws.com/${db.name}?createDatabaseIfNotExist=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;autoReconnect=true</jdbc.url>
+        <jdbc.username>cfcuser</jdbc.username>
+        <jdbc.password>password</jdbc.password>
         <dbunit.dataTypeFactoryName>org.dbunit.ext.mysql.MySqlDataTypeFactory</dbunit.dataTypeFactoryName>
         <dbunit.operation.type>CLEAN_INSERT</dbunit.operation.type>
         <hibernate.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</hibernate.dialect>
@@ -747,9 +750,9 @@
         <jdbc.artifactId>mysql-connector-java</jdbc.artifactId>
         <jdbc.version>5.1.27</jdbc.version>
         <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
-       <jdbc.url>jdbc:mysql://localhost/${db.name}?createDatabaseIfNotExist=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;autoReconnect=true</jdbc.url>
+      <!-- <jdbc.url>jdbc:mysql://localhost/${db.name}?createDatabaseIfNotExist=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;autoReconnect=true</jdbc.url>
         <jdbc.username>root</jdbc.username>
-        <jdbc.password>mysql</jdbc.password>
+        <jdbc.password>mysql</jdbc.password>-->
         <jdbc.validationQuery>SELECT 1 + 1</jdbc.validationQuery>
     </properties>
 </project>
