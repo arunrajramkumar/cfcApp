@@ -714,7 +714,7 @@
         <junit.version>4.11</junit.version>
         <servlet.version>3.1.0</servlet.version>
         <wiser.version>1.2</wiser.version>
-        <tomcat.path>C:\Program Files\Apache Software Foundation\Tomcat 7.0</tomcat.path>
+        <tomcat.path>\</tomcat.path>
 
         <!-- WebTest default target -->
         <webtest.target>run-all-tests</webtest.target>
